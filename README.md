@@ -112,6 +112,8 @@ HTTP-сессии отключены, поэтому API работает в sta
 
 SpotBugs анализирует скомпилированный Java-байткод и ищет потенциально опасные конструкции:
 
+![Описание изображения](img/img_2.png)
+
 ```bash
 mvn clean verify
 ```
@@ -120,8 +122,8 @@ mvn clean verify
 
 OWASP Dependency-Check анализирует Maven-зависимости по базе известных CVE:
 
+![Описание изображения](img/img_1.png)
+
 ```bash
 mvn clean verify
 ```
-
-Отчёты:
