@@ -1,0 +1,41 @@
+name: Secure REST API CI/CD
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    name: Build, test and security scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Build, test, SAST and SCA
+        run: mvn -B verify -DskipTests=false -DnvdApiKey="${{ secrets.NVD_API_KEY }}"
+
+      - name: Upload SAST and SCA reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-reports
+          if-no-files-found: warn
+          path: |
+            target/site/spotbugs.html
+            target/spotbugs.xml
+            target/spotbugsXml.xml
+            target/dependency-check/

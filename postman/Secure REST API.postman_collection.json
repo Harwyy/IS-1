@@ -1,0 +1,93 @@
+{
+  "info": {
+    "name": "Secure REST API - Localhost",
+    "description": "Простые запросы к локальному REST API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register user",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"student\",\n  \"password\": \"StrongPassword123!\"\n}"
+        },
+        "url": "http://localhost:8080/auth/register"
+      }
+    },
+    {
+      "name": "Login demo user",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"demo\",\n  \"password\": \"ChangeMe123!\"\n}"
+        },
+        "url": "http://localhost:8080/auth/login"
+      }
+    },
+    {
+      "name": "Get data",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/api/data"
+      }
+    },
+    {
+      "name": "Create data",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Test title\",\n  \"content\": \"Test content\"\n}"
+        },
+        "url": "http://localhost:8080/api/data"
+      }
+    },
+    {
+      "name": "Get current profile",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/api/me"
+      }
+    },
+    {
+      "name": "Login with wrong password",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"demo\",\n  \"password\": \"wrong-password\"\n}"
+        },
+        "url": "http://localhost:8080/auth/login"
+      }
+    }
+  ]
+}
