@@ -6,8 +6,6 @@ services:
       POSTGRES_USER: secure_api
       POSTGRES_PASSWORD: secure_api_password
     ports:
-      # 5432 on the host may already be occupied by a local PostgreSQL.
-      # The API uses the internal Docker address db:5432 and is unaffected.
       - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data

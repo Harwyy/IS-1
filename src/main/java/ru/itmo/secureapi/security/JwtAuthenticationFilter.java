@@ -40,9 +40,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                         SecurityContextHolder.getContext().setAuthentication(authentication);
                     }
                 }
-            } catch (RuntimeException ignored) {
-                // Invalid tokens are treated as anonymous requests and rejected by Spring Security.
-            }
+            } catch (RuntimeException ignored) {}
         }
         chain.doFilter(request, response);
     }

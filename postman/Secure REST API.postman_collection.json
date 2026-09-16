@@ -17,13 +17,13 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"username\": \"student\",\n  \"password\": \"StrongPassword123!\"\n}"
+          "raw": "{\n  \"username\": \"harwyy123\",\n  \"password\": \"harwyy123\"\n}"
         },
         "url": "http://localhost:8080/auth/register"
       }
     },
     {
-      "name": "Login demo user",
+      "name": "Login user",
       "request": {
         "method": "POST",
         "header": [
@@ -34,7 +34,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"username\": \"demo\",\n  \"password\": \"ChangeMe123!\"\n}"
+          "raw": "{\n  \"username\": \"test_user\",\n  \"password\": \"password_test\"\n}"
         },
         "url": "http://localhost:8080/auth/login"
       }
@@ -70,23 +70,6 @@
         "method": "GET",
         "header": [],
         "url": "http://localhost:8080/api/me"
-      }
-    },
-    {
-      "name": "Login with wrong password",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"username\": \"demo\",\n  \"password\": \"wrong-password\"\n}"
-        },
-        "url": "http://localhost:8080/auth/login"
       }
     }
   ]
