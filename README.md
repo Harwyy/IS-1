@@ -12,7 +12,6 @@
 
 ```text
 src/main/java/ru/itmo/secureapi/
-├── config/       начальная настройка и заполнение базы
 ├── controller/   REST-контроллеры и HTTP-запросы
 ├── service/      бизнес-логика
 ├── repository/   доступ к данным через Spring Data JPA
